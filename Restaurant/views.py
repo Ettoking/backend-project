@@ -10,6 +10,10 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.decorators import permission_classes
 
 
+def index(request):
+    return render(request, 'index.html')
+
+
 class MenuItemsView(generics.ListCreateAPIView):
     permission_classes = [IsAuthenticated]
     queryset = MenuTable.objects.all()

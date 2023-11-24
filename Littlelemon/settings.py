@@ -139,7 +139,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = 'Restaurant/static/'  # This is the path to the static folder in the Restaurant app (same as below)
+
+STATICFILES_DIRS = [ # This is the path to the static folder in the Restaurant app (same as above)
+    "Restaurant/static",
+]
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
