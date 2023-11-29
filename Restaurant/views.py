@@ -19,7 +19,9 @@ def about(request):
     return render(request, 'about.html')
 
 def menu(request):
-    return render(request, 'menu.html')
+    menu_data = MenuTable.objects.all() # get all menu items from database using the MenuTable model 
+    main_data = {'menu':menu_data} # create context dictionary to pass to template engine as context variable 'menu_items' 
+    return render(request, 'menu.html', {'menu': main_data}) # render the menu.html template with the context dictionary as context variable 'menu_items' 
 
 def book(request):
     form = BookingForm()

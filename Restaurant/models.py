@@ -1,14 +1,14 @@
 from django.db import models
 
 # Create your models here.
-class BookingTable(models.Model):
+class BookingTable(models.Model): # this is the table name in the database 
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
     number_of_guests = models.IntegerField()
     bookingDate = models.DateTimeField()
 
 
-class MenuTable(models.Model):
+class MenuTable(models.Model): # this is the table name in the database 
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=255)
     price = models.DecimalField(max_digits=10, decimal_places=2)
@@ -19,7 +19,7 @@ class MenuTable(models.Model):
     
 
 
-class Booking(models.Model):
+class Booking(models.Model): # this is the table name in the database 
     first_name = models.CharField(max_length=200)
     reservation_date = models.DateField()
     reservation_slot = models.SmallIntegerField(default=10)
