@@ -10,6 +10,16 @@
       <!--Begin col-->
       <div class="column">
         <pre id="bookings"></pre>
+        {% for booking in bookings.bookings %}
+        <p>
+          <span class="menu-item">
+            {{ booking.name }}
+          </span>
+          <span class="booking-date">
+            {{ booking.bookingDate }}
+          </span>
+        </p>
+        {% endfor %}
       </div>
       <!--End col-->
 

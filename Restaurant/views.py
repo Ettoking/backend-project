@@ -33,7 +33,11 @@ def book(request):
     return render(request, 'book.html', context)
 
 def bookings(request):
-    return render(request, 'bookings.html')
+    bookings_data = BookingTable.objects.all() # get all menu items from database using the MenuTable model
+    main_data = {'bookings':bookings_data} # create context dictionary to pass to template engine as context variable 'menu_items'
+    print(main_data)
+    return render(request, 'bookings.html', {'bookings': main_data}) # render the menu.html template with the context dictionary as context variable 'menu_items'
+    
 
 
 class MenuItemsView(generics.ListCreateAPIView):
