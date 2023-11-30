@@ -5,8 +5,11 @@ class BookingTable(models.Model): # this is the table name in the database
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
     number_of_guests = models.IntegerField()
-    bookingDate = models.DateTimeField()
+    # bookingDate = models.DateField()
+    reservation_date = models.DateField()
 
+    def __str__(self): # this is used to display the title and price in the admin panel
+        return f'{self.name} - {str(self.number_of_guests)}'
 
 class MenuTable(models.Model): # this is the table name in the database 
     id = models.AutoField(primary_key=True)
@@ -19,10 +22,3 @@ class MenuTable(models.Model): # this is the table name in the database
     
 
 
-class Booking(models.Model): # this is the table name in the database 
-    first_name = models.CharField(max_length=200)
-    reservation_date = models.DateField()
-    reservation_slot = models.SmallIntegerField(default=10)
-
-    def __str__(self): 
-        return self.first_name

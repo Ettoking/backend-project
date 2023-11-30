@@ -12,5 +12,6 @@ class MenuItemSerializer(serializers.ModelSerializer):
 class BookingSerializer(serializers.ModelSerializer):
     class Meta:
         model = BookingTable
-        fields = '__all__'
+        # fields = '__all__'
+        fields = ('id', 'name', 'number_of_guests', 'reservation_date')
         

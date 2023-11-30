@@ -9,7 +9,7 @@ from .serializers import MenuItemSerializer, BookingSerializer
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.decorators import permission_classes
 
-from .forms import BookingForm
+from .forms import BookingTableForm
 
 
 def index(request):
@@ -24,9 +24,9 @@ def menu(request):
     return render(request, 'menu.html', {'menu': main_data}) # render the menu.html template with the context dictionary as context variable 'menu_items' 
 
 def book(request):
-    form = BookingForm()
+    form = BookingTableForm()
     if request.method == 'POST':
-        form = BookingForm(request.POST)
+        form = BookingTableForm(request.POST)
         if form.is_valid():
             form.save()
     context = {'form':form}
